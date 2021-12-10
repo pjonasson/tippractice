@@ -331,18 +331,58 @@ string = "leetcode"
 #              x
 # Output: false
 
-def subset(array1, array2)
-  hash = {}
-  array1.each do |n|
-    hash[n] = true
-  end
-  array2.each do |number|
-    if hash[number]
-    else
-      return false
+# def subset(array1, array2)
+#   hash = {}
+#   array1.each do |n|
+#     hash[n] = true
+#   end
+#   array2.each do |number|
+#     if hash[number]
+#     else
+#       return false
+#     end
+#   end
+#   return true
+# end
+
+# p subset([1, 2, 3, 4, 5, 6], [6, 3, 7])
+
+# This is very similar to ETL #3, but you must now accomplish the task in linear time (O(N)).
+
+# Given an array of Youtube videos, for example:
+
+youtube = [
+  { title: "How to Make Wood", author_id: 4, views: 6 },
+  { title: "How to Seem Perfect", author_id: 4, views: 111 },
+  { title: 'Review of the New "Unbreakable Mug"', author_id: 2, views: 202 },
+  { title: "Why Pigs Stink", author_id: 1, views: 12 },
+]
+
+# and an array of authors, for example:
+
+authors = [
+  { id: 1, first_name: "Jazz", last_name: "Callahan" },
+  { id: 2, first_name: "Ichabod", last_name: "Loadbearer" },
+  { id: 3, first_name: "Saron", last_name: "Kim" },
+  { id: 4, first_name: "Teena", last_name: "Burgess" },
+]
+
+# Return a new array of videos in the following format, and only include videos that have at least 100 views:
+
+# [
+# {title: 'How to Seem Perfect', views: 111, author_name: 'Teena Burgess' }
+# {title: 'Review of the New "Unbreakable Mug"', views: 202, author_name: 'Ichabod Loadbearer' },
+# ]
+
+def good_videos(youtube, authors)
+  answer = []
+  youtube.each do |video|
+    if video[:views] >= 100
+      author = authors.find { |author| author[:id] == video[:author_id] }
+      answer << { title: video[:title], views: video[:views], author_name: author[:first_name] + " " + author[:last_name] }
     end
   end
-  return true
+  return answer
 end
 
-p subset([1, 2, 3, 4, 5, 6], [6, 3, 7])
+p good_videos(youtube, authors)
