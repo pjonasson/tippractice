@@ -351,21 +351,21 @@ string = "leetcode"
 
 # Given an array of Youtube videos, for example:
 
-youtube = [
-  { title: "How to Make Wood", author_id: 4, views: 6 },
-  { title: "How to Seem Perfect", author_id: 4, views: 111 },
-  { title: 'Review of the New "Unbreakable Mug"', author_id: 2, views: 202 },
-  { title: "Why Pigs Stink", author_id: 1, views: 12 },
-]
+# youtube = [
+#   { title: "How to Make Wood", author_id: 4, views: 6 },
+#   { title: "How to Seem Perfect", author_id: 4, views: 111 },
+#   { title: 'Review of the New "Unbreakable Mug"', author_id: 2, views: 202 },
+#   { title: "Why Pigs Stink", author_id: 1, views: 12 },
+# ]
 
-# and an array of authors, for example:
+# # and an array of authors, for example:
 
-authors = [
-  { id: 1, first_name: "Jazz", last_name: "Callahan" },
-  { id: 2, first_name: "Ichabod", last_name: "Loadbearer" },
-  { id: 3, first_name: "Saron", last_name: "Kim" },
-  { id: 4, first_name: "Teena", last_name: "Burgess" },
-]
+# authors = [
+#   { id: 1, first_name: "Jazz", last_name: "Callahan" },
+#   { id: 2, first_name: "Ichabod", last_name: "Loadbearer" },
+#   { id: 3, first_name: "Saron", last_name: "Kim" },
+#   { id: 4, first_name: "Teena", last_name: "Burgess" },
+# ]
 
 # Return a new array of videos in the following format, and only include videos that have at least 100 views:
 
@@ -374,15 +374,42 @@ authors = [
 # {title: 'Review of the New "Unbreakable Mug"', views: 202, author_name: 'Ichabod Loadbearer' },
 # ]
 
-def good_videos(youtube, authors)
-  answer = []
-  youtube.each do |video|
-    if video[:views] >= 100
-      author = authors.find { |author| author[:id] == video[:author_id] }
-      answer << { title: video[:title], views: video[:views], author_name: author[:first_name] + " " + author[:last_name] }
-    end
-  end
-  return answer
-end
+# def good_videos(youtube, authors)
+#   answer = []
+#   youtube.each do |video|
+#     if video[:views] >= 100
+#       author = authors.find { |author| author[:id] == video[:author_id] }
+#       answer << { title: video[:title], views: video[:views], author_name: author[:first_name] + " " + author[:last_name] }
+#     end
+#   end
+#   return answer
+# end
 
-p good_videos(youtube, authors)
+# p good_videos(youtube, authors)
+
+# Given a DNA strand, return its RNA complement (per RNA transcription).
+
+# Both DNA and RNA strands are a sequence of nucleotides. Here we're representing the sequences with single-letter characters (e.g. a sample strand may look like: "AGCA".)
+
+# Given a string representing a DNA strand, provide its transcribed RNA strand, according to the following pattern:
+
+# G becomes C
+# C becomes G
+# T becomes A
+# A becomes U
+
+# So based on all this, here's a sample input/output:
+
+# Input: 'ACGTGGTCTTAA'
+# Output: 'UGCACCAGAAUU'
+
+# def rna_complement(dna)
+#   answer = ""
+#   rna = { "G" => "C", "C" => "G", "T" => "A", "A" => "U" }
+#   dna.chars.each do |letter|
+#     answer += rna[letter]
+#   end
+#   return answer
+# end
+
+# p rna_complement("ACGTGGTCTTAA")
