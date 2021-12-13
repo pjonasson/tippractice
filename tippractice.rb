@@ -457,3 +457,16 @@ string = "leetcode"
 # end
 
 # p flat_array({ "a" => 1, "b" => 2, "c" => 3, "d" => 4 })
+
+# Input: {"a" => 1, "b" => 2, "c" => 3}
+# Output: {1 => "a", 2 => "b", 3 => "c"}
+
+def flip_hash(hash)
+  answer = {}
+  hash.each do |k, v|
+    answer[v] = k
+  end
+  return answer
+end
+
+p flip_hash({ "a" => 1, "b" => 2, "c" => 3 })
