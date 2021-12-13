@@ -432,12 +432,28 @@ string = "leetcode"
 # 'u' => 1
 # }
 
-def array_conversion(array, n)
-  hash = {}
-  array.each do |i|
-    hash[i] = n
-  end
-  return hash
-end
+# def array_conversion(array, n)
+#   hash = {}
+#   array.each do |i|
+#     hash[i] = n
+#   end
+#   return hash
+# end
 
-p array_conversion(["a", "e", "i", "o", "u"], 1)
+# p array_conversion(["a", "e", "i", "o", "u"], 1)
+
+# Given a hash, return a flat array containing all the hash’s keys and values.
+
+# Input: {“a” => 1, “b” => 2, “c” => 3, “d” => 4}
+# Output: [“a”, 1, “b”, 2, “c”, 3, “d”, 4]
+
+# def flat_array(hash)
+#   answer = []
+#   hash.each do |k, v|
+#     answer << k
+#     answer << v
+#   end
+#   return answer
+# end
+
+# p flat_array({ "a" => 1, "b" => 2, "c" => 3, "d" => 4 })
