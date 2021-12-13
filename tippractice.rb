@@ -412,4 +412,32 @@ string = "leetcode"
 #   return answer
 # end
 
-# p rna_complement("ACGTGGTCTTAA")
+# p rna_complement("ACGTGGTCT")
+
+# Description
+# You are given two parameters, an array and a number. Return a hash whose keys are each of the values from the array parameter, and whose values are the number parameter.
+
+# Input:
+
+# First argument: ["a", "e", "i", "o", "u"]
+# Second argument: 1
+
+# Output:
+
+# {
+# 'a' => 1,
+# 'e' => 1,
+# 'i' => 1,
+# 'o' => 1,
+# 'u' => 1
+# }
+
+def array_conversion(array, n)
+  hash = {}
+  array.each do |i|
+    hash[i] = n
+  end
+  return hash
+end
+
+p array_conversion(["a", "e", "i", "o", "u"], 1)
