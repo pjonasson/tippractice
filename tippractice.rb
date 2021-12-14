@@ -475,7 +475,7 @@ string = "leetcode"
 
 # Input:
 
-{ 1 => ["A", "E", "I", "O", "U"] }
+# { 1 => ["A", "E", "I", "O", "U"] }
 
 # Output:
 
@@ -545,23 +545,50 @@ string = "leetcode"
 # 'z' => 10
 # }
 
-def hash_output(hash)
-  answer = {}
-  hash.each do |k, v|
-    array = v
-    array.each do |n|
-      answer[n] = k
+# def hash_output(hash)
+#   answer = {}
+#   hash.each do |k, v|
+#     array = v
+#     array.each do |n|
+#       answer[n] = k
+#     end
+#   end
+#   return answer.sort_by { |key| key }.to_h
+# end
+
+# p hash_output({
+#     1 => ["A", "E", "I", "O", "U", "L", "N", "R", "S", "T"],
+#     2 => ["D", "G"],
+#     3 => ["B", "C", "M", "P"],
+#     4 => ["F", "H", "V", "W", "Y"],
+#     5 => ["K"],
+#     8 => ["J", "X"],
+#     10 => ["Q", "Z"],
+#   })
+
+# Given a non-empty array of integers nums, every element appears twice except for one. Find that single one.
+
+# You must implement a solution with a linear runtime complexity and use only constant extra space.
+
+# Input: nums = [2,2,1]
+# Output: 1
+
+# loop
+# 2 => 2
+# 1 => 1
+
+# output: 1
+
+def single_number(array)
+  hash = {}
+  array.each do |n|
+    if hash[n]
+      hash[n] += 1
+    else
+      hash[n] = 1
     end
   end
-  return answer.sort_by { |key| key }.to_h
+  return hash.key(1)
 end
 
-p hash_output({
-    1 => ["A", "E", "I", "O", "U", "L", "N", "R", "S", "T"],
-    2 => ["D", "G"],
-    3 => ["B", "C", "M", "P"],
-    4 => ["F", "H", "V", "W", "Y"],
-    5 => ["K"],
-    8 => ["J", "X"],
-    10 => ["Q", "Z"],
-  })
+p single_number([2, 2, 1, 1, 3])
