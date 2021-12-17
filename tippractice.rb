@@ -579,16 +579,60 @@ string = "leetcode"
 
 # output: 1
 
-def single_number(array)
-  hash = {}
-  array.each do |n|
-    if hash[n]
-      hash[n] += 1
-    else
-      hash[n] = 1
+# def single_number(array)
+#   hash = {}
+#   array.each do |n|
+#     if hash[n]
+#       hash[n] += 1
+#     else
+#       hash[n] = 1
+#     end
+#   end
+#   return hash.key(1)
+# end
+
+# p single_number([2, 2, 1, 1, 3])
+
+# Alice and Bob each created one problem for HackerRank. A reviewer rates the two challenges, awarding points on a scale from 1 to 100 for three categories: problem clarity, originality, and difficulty.
+
+# The rating for Alice's challenge is the triplet a = (a[0], a[1], a[2]), and the rating for Bob's challenge is the triplet b = (b[0], b[1], b[2]).
+
+# The task is to find their comparison points by comparing a[0] with b[0], a[1] with b[1], and a[2] with b[2].
+
+# If a[i] > b[i], then Alice is awarded 1 point.
+# If a[i] < b[i], then Bob is awarded 1 point.
+# If a[i] = b[i], then neither person receives a point.
+# Comparison points is the total points a person earned.
+
+# Given a and b, determine their respective comparison points.
+
+# Example
+
+# a = [1, 2, 3]
+# b = [3, 2, 1]
+# For elements *0*, Bob is awarded a point because a[0] .
+# For the equal elements a[1] and b[1], no points are earned.
+# Finally, for elements 2, a[2] > b[2] so Alice receives a point.
+# The return array is [1, 1] with Alice's score first and Bob's second.
+
+# alice = [1, 2, 3]
+#                |
+# bob =   [3, 2, 1]
+
+# output = [1,1]
+
+def compare_triplets(a, b)
+  score = [0, 0]
+  index = 0
+  while index < a.length
+    if a[index] > b[index]
+      score[0] += 1
+    elsif a[index] < b[index]
+      score[1] += 1
     end
+    index += 1
   end
-  return hash.key(1)
+  return score
 end
 
-p single_number([2, 2, 1, 1, 3])
+p compare_triplets([1, 2, 1], [3, 2, 1])
