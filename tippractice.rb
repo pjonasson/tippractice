@@ -621,18 +621,44 @@ string = "leetcode"
 
 # output = [1,1]
 
-def compare_triplets(a, b)
-  score = [0, 0]
-  index = 0
-  while index < a.length
-    if a[index] > b[index]
-      score[0] += 1
-    elsif a[index] < b[index]
-      score[1] += 1
+# def compare_triplets(a, b)
+#   score = [0, 0]
+#   index = 0
+#   while index < a.length
+#     if a[index] > b[index]
+#       score[0] += 1
+#     elsif a[index] < b[index]
+#       score[1] += 1
+#     end
+#     index += 1
+#   end
+#   return score
+# end
+
+# p compare_triplets([1, 2, 1], [3, 2, 1])
+
+# This is the same exercise as Two Sum I, but you must now solve it in linear time.
+
+# Given an array of numbers, return a new array containing just two numbers (from the original array) that add up to the number 10. If there are no two numbers that add up to 10, return false.
+
+# Input: [2, 5, 3, 1, 0, 7, 11]
+# Output: [3, 7]
+
+# Input: [1, 2, 3, 4, 5]
+# Output: false (While 1, 2, 3, and 4 altogether add up to 10, we're seeking just one pair of numbers.)
+
+def two_sum(array)
+  hash = {}
+  answer = []
+  array.each do |n|
+    if hash[10 - n]
+      answer << 10 - n
+      answer << n
+      return answer
     end
-    index += 1
+    hash[n] = true
   end
-  return score
+  return false
 end
 
-p compare_triplets([1, 2, 1], [3, 2, 1])
+p two_sum([2, 5, 3, 1, 0, 7, 11])
