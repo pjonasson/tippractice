@@ -647,18 +647,18 @@ string = "leetcode"
 # Input: [1, 2, 3, 4, 5]
 # Output: false (While 1, 2, 3, and 4 altogether add up to 10, we're seeking just one pair of numbers.)
 
-def two_sum(array)
-  hash = {}
-  answer = []
-  array.each do |n|
-    if hash[10 - n]
-      answer << 10 - n
-      answer << n
-      return answer
-    end
-    hash[n] = true
-  end
-  return false
-end
+# def two_sum(array)
+#   hash = {}
+#   answer = []
+#   array.each do |n|
+#     if hash[10 - n]
+#       answer << 10 - n
+#       answer << n
+#       return answer
+#     end
+#     hash[n] = true
+#   end
+#   return false
+# end
 
-p two_sum([2, 5, 3, 1, 0, 7, 11])
+# p two_sum([2, 5, 3, 1, 0, 7, 11])
