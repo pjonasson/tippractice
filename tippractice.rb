@@ -662,3 +662,74 @@ string = "leetcode"
 # end
 
 # p two_sum([2, 5, 3, 1, 0, 7, 11])
+
+addresses = [
+  {
+    "account_id": "39",
+    "street_address": "216 N May St",
+    "city": "Chicago",
+    "state": "IL",
+    "postal_code": "60607",
+  },
+  {
+    "account_id": "40",
+    "street_address": "625 W Adams St",
+    "city": "Chicago",
+    "state": "IL",
+    "postal_code": "60661",
+  },
+  {
+    "account_id": "41",
+    "street_address": "151 N Franklin St",
+    "city": "Chicago",
+    "state": "IL",
+    "postal_code": "60606",
+  },
+  {
+    "account_id": "42",
+    "street_address": "216 N May St",
+    "city": "Chicago",
+    "state": "IL",
+    "postal_code": "60607",
+  },
+  {
+    "account_id": "43",
+    "street_address": "151 N Franklin St",
+    "city": "Chicago",
+    "state": "IL",
+    "postal_code": "60606",
+  },
+  {
+    "account_id": "44",
+    "street_address": "216 N May St",
+    "city": "Chicago",
+    "state": "IL",
+    "postal_code": "60607",
+  },
+]
+
+def find_related_addresses(addresses)
+  related = {}
+  addresses.each do |address|
+    if related[address[:street_address]]
+      related[address[:street_address]] += 1
+    else related[address[:street_address]] = 1     end
+  end
+  answer = {}
+  index = 0
+  while index < related.length
+    if related.values[index] > 1
+      answer[related.keys[index]] = []
+      addresses.each do |address|
+        if related.keys[index] == address[:street_address]
+          answer[related.keys[index]] << address[:account_id]
+        end
+      end
+    end
+    index += 1
+  end
+
+  return answer
+end
+
+p find_related_addresses(addresses)

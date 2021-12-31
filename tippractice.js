@@ -43,13 +43,13 @@
 // forEach
 // Output: 'UGCACCAGAAUU'
 
-function dnaTranscription(string) {
-  var transcription = "";
-  var dna = { G: "C", C: "G", T: "A", A: "U" };
-  for (let i = 0; i < string.length; i++) {
-    transcription += dna[string[i]];
-  }
-  return transcription;
-}
+// function dnaTranscription(string) {
+//   var transcription = "";
+//   var dna = { G: "C", C: "G", T: "A", A: "U" };
+//   for (let i = 0; i < string.length; i++) {
+//     transcription += dna[string[i]];
+//   }
+//   return transcription;
+// }
 
-console.log(dnaTranscription("ACGTGGTCTTAA"));
+// console.log(dnaTranscription("ACGTGGTCTTAA"));
