@@ -78,14 +78,33 @@
 // Input: [99, 101, 88, 4, 2000, 50]
 // Output: [99, 88, 4, 50]
 
-function hundredLess(array) {
-  var output = [];
-  for (let i = 0; i < array.length; i++) {
-    if (array[i] < 100) {
-      output.push(array[i]);
-    }
-  }
-  return output;
+// function hundredLess(array) {
+//   var output = [];
+//   for (let i = 0; i < array.length; i++) {
+//     if (array[i] < 100) {
+//       output.push(array[i]);
+//     }
+//   }
+//   return output;
+// }
+
+// console.log(hundredLess([99, 101, 88, 4, 2000, 50]));
+
+// Given an array of numbers, write a function that returns a new array whose values are the original array’s value doubled.
+
+var input = [4, 2, 5, 99, -4];
+// Output: [8, 4, 10, 198, -8]
+
+// function doubled(array) {
+//   array.map(function (element) {
+//     return element * 2;
+//   });
+// }
+
+function doubled(array) {
+  return array.map((number) => {
+    return number * 2;
+  });
 }
 
-console.log(hundredLess([99, 101, 88, 4, 2000, 50]));
+console.log(doubled(input));
