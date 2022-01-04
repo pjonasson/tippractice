@@ -133,12 +133,27 @@
 
 // Explanation: (1 x 2 x 3 x 4) = 24
 
-function product(array) {
-  var sum = 1;
-  for (let i = 0; i < array.length; i++) {
-    sum = sum * array[i];
+// function product(array) {
+//   var sum = 1;
+//   for (let i = 0; i < array.length; i++) {
+//     sum = sum * array[i];
+//   }
+//   return sum;
+// }
+
+// console.log(product([1, 2, 3, 4]));
+
+// Given an array, write a function that returns an array that contains the original array’s values in reverse.
+
+// Input: [1, 2, 3, 4, 5]
+// Output: [5, 4, 3, 2, 1]
+
+function reverseArray(array) {
+  var output = [];
+  for (let i = array.length - 1; i >= 0; i--) {
+    output.push(array[i]);
   }
-  return sum;
+  return output;
 }
 
-console.log(product([1, 2, 3, 4]));
+console.log(reverseArray([1, 2, 3, 4, 5]));
