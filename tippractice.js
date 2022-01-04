@@ -92,7 +92,7 @@
 
 // Given an array of numbers, write a function that returns a new array whose values are the original array’s value doubled.
 
-var input = [4, 2, 5, 99, -4];
+// var input = [4, 2, 5, 99, -4];
 // Output: [8, 4, 10, 198, -8]
 
 // function doubled(array) {
@@ -101,10 +101,27 @@ var input = [4, 2, 5, 99, -4];
 //   });
 // }
 
-function doubled(array) {
-  return array.map((number) => {
-    return number * 2;
+// function doubled(array) {
+//   return array.map((number) => {
+//     return number * 2;
+//   });
+// }
+
+// console.log(doubled(input));
+
+// Write a function that returns the greatest value from an array of numbers.
+
+// Input: [5, 17, -4, 20, 12]
+// Output: 20
+
+function greatestValue(array) {
+  var largest = array[0];
+  array.forEach((n) => {
+    if (n > largest) {
+      largest = n;
+    }
   });
+  return largest;
 }
 
-console.log(doubled(input));
+console.log(greatestValue([5, 17, -4, 20, 12]));
