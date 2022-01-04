@@ -114,14 +114,31 @@
 // Input: [5, 17, -4, 20, 12]
 // Output: 20
 
-function greatestValue(array) {
-  var largest = array[0];
-  array.forEach((n) => {
-    if (n > largest) {
-      largest = n;
-    }
-  });
-  return largest;
+// function greatestValue(array) {
+//   var largest = array[0];
+//   array.forEach((n) => {
+//     if (n > largest) {
+//       largest = n;
+//     }
+//   });
+//   return largest;
+// }
+
+// console.log(greatestValue([5, 17, -4, 20, 12]));
+
+// Write a function that accepts an array of numbers and returns the product of all the numbers.
+
+// Input: [1, 2, 3, 4]
+// Output: 24
+
+// Explanation: (1 x 2 x 3 x 4) = 24
+
+function product(array) {
+  var sum = 1;
+  for (let i = 0; i < array.length; i++) {
+    sum = sum * array[i];
+  }
+  return sum;
 }
 
-console.log(greatestValue([5, 17, -4, 20, 12]));
+console.log(product([1, 2, 3, 4]));
