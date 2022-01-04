@@ -63,12 +63,29 @@
 
 // Explanation: (1 + 2 + 3 + 4) = 10
 
-function sum(array) {
-  var sum = 0;
+// function sum(array) {
+//   var sum = 0;
+//   for (let i = 0; i < array.length; i++) {
+//     sum += array[i];
+//   }
+//   return sum;
+// }
+
+// console.log(sum([1, 8, 8, 4]));
+
+// Given an array of numbers, write a function that returns a new array that contains all numbers from the original array that are less than 100.
+
+// Input: [99, 101, 88, 4, 2000, 50]
+// Output: [99, 88, 4, 50]
+
+function hundredLess(array) {
+  var output = [];
   for (let i = 0; i < array.length; i++) {
-    sum += array[i];
+    if (array[i] < 100) {
+      output.push(array[i]);
+    }
   }
-  return sum;
+  return output;
 }
 
-console.log(sum([1, 8, 8, 4]));
+console.log(hundredLess([99, 101, 88, 4, 2000, 50]));
