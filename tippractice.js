@@ -280,14 +280,37 @@
 // Input: "ABCDEFG", "ABCDEFG",
 // Output: 0
 
-function hamming(string1, string2) {
-  let count = 0;
-  for (let i = 0; i < string1.length; i++) {
-    if (string1[i] !== string2[i]) {
-      count += 1;
+// function hamming(string1, string2) {
+//   let count = 0;
+//   for (let i = 0; i < string1.length; i++) {
+//     if (string1[i] !== string2[i]) {
+//       count += 1;
+//     }
+//   }
+//   return count;
+// }
+
+// console.log(hamming("ABCDEFG", "ABXDERG"));
+
+// Given a string of words, write a function that returns a new string that contains the words in reverse order.
+
+// Input: “popcorn is so cool isn’t it yeah i thought so”
+// Output: “so thought i yeah it isn’t cool so is popcorn”
+
+function reverseSentence(string) {
+  var reverse = "";
+  var word = "";
+  for (let i = string.length - 1; i >= 0; i--) {
+    if (string[i] === " ") {
+      reverse += word + " ";
+      word = "";
+    } else if (i === 0) {
+      word = string[i].concat(word);
+      reverse += word;
+    } else {
+      word = string[i].concat(word);
     }
   }
-  return count;
+  return reverse;
 }
-
-console.log(hamming("ABCDEFG", "ABXDERG"));
+console.log(reverseSentence("popcorn is so cool isn’t it yeah i thought so"));
