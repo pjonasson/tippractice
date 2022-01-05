@@ -222,15 +222,28 @@
 // Input: “abcdefghhijkkloooop”
 // Output: “h”
 
-function duplicateCharacter(string) {
-  var hash = {};
-  for (let i = 0; i < string.length; i++) {
-    if (hash[string[i]]) {
+// function duplicateCharacter(string) {
+//   var hash = {};
+//   for (let i = 0; i < string.length; i++) {
+//     if (hash[string[i]]) {
+//       return string[i];
+//     } else {
+//       hash[string[i]] = 1;
+//     }
+//   }
+// }
+
+// console.log(duplicateCharacter("abcdefghhijkkloooop"));
+
+function duplicateInARow(string) {
+  var check = string[0];
+  for (let i = 1; i < string.length; i++) {
+    if (check === string[i]) {
       return string[i];
     } else {
-      hash[string[i]] = 1;
+      check = string[i];
     }
   }
 }
 
-console.log(duplicateCharacter("abcdefghhijkkloooop"));
+console.log(duplicateInARow("abcdefghijkkloooop"));
