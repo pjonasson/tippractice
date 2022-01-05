@@ -203,16 +203,34 @@
 // Input: “hello, how are your porcupines today?”
 // Output: “hElLo, HoW ArE YoUr pOrCuPiNeS ToDaY?”
 
-function alternateCapitals(string) {
-  var output = "";
+// function alternateCapitals(string) {
+//   var output = "";
+//   for (let i = 0; i < string.length; i++) {
+//     if (i % 2) {
+//       output += string[i].toUpperCase();
+//     } else {
+//       output += string[i];
+//     }
+//   }
+//   return output;
+// }
+
+// console.log(alternateCapitals("hello, how are your porcupines today?"));
+
+// Given a string, write a function that returns the first occurence of two duplicate characters in a row, and return the duplicated character.
+
+// Input: “abcdefghhijkkloooop”
+// Output: “h”
+
+function duplicateCharacter(string) {
+  var hash = {};
   for (let i = 0; i < string.length; i++) {
-    if (i % 2) {
-      output += string[i].toUpperCase();
+    if (hash[string[i]]) {
+      return string[i];
     } else {
-      output += string[i];
+      hash[string[i]] = 1;
     }
   }
-  return output;
 }
 
-console.log(alternateCapitals("hello, how are your porcupines today?"));
+console.log(duplicateCharacter("abcdefghhijkkloooop"));
