@@ -187,13 +187,32 @@
 
 // console.log(containMoneySymbol("i hate but i love money i know i know im crazy"));
 
-function containsDollarSymbol(string) {
+// function containsDollarSymbol(string) {
+//   for (let i = 0; i < string.length; i++) {
+//     if (string[i] === "$") {
+//       return true;
+//     }
+//   }
+//   return false;
+// }
+
+// console.log(containsDollarSymbol("i hate but i love money i know i know im crazy"));
+
+// Given a string, write a function that returns a copy of the original string that has every other character capitalized. (Capitalization should begin with the second character.)
+
+// Input: “hello, how are your porcupines today?”
+// Output: “hElLo, HoW ArE YoUr pOrCuPiNeS ToDaY?”
+
+function alternateCapitals(string) {
+  var output = "";
   for (let i = 0; i < string.length; i++) {
-    if (string[i] === "$") {
-      return true;
+    if (i % 2) {
+      output += string[i].toUpperCase();
+    } else {
+      output += string[i];
     }
   }
-  return false;
+  return output;
 }
 
-console.log(containsDollarSymbol("i hate but i love money i know i know im crazy"));
+console.log(alternateCapitals("hello, how are your porcupines today?"));
