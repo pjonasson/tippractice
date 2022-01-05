@@ -181,8 +181,19 @@
 // Input: “abcdefghijklmnopqrstuvwxyz”
 // Output: false
 
-function containMoneySymbol(string) {
-  return string.includes("$");
+// function containMoneySymbol(string) {
+//   return string.includes("$");
+// }
+
+// console.log(containMoneySymbol("i hate but i love money i know i know im crazy"));
+
+function containsDollarSymbol(string) {
+  for (let i = 0; i < string.length; i++) {
+    if (string[i] === "$") {
+      return true;
+    }
+  }
+  return false;
 }
 
-console.log(containMoneySymbol("i hate but i love money i know i know im crazy"));
+console.log(containsDollarSymbol("i hate but i love money i know i know im crazy"));
