@@ -148,12 +148,27 @@
 // Input: [1, 2, 3, 4, 5]
 // Output: [5, 4, 3, 2, 1]
 
-function reverseArray(array) {
-  var output = [];
-  for (let i = array.length - 1; i >= 0; i--) {
-    output.push(array[i]);
+// function reverseArray(array) {
+//   var output = [];
+//   for (let i = array.length - 1; i >= 0; i--) {
+//     output.push(array[i]);
+//   }
+//   return output;
+// }
+
+// console.log(reverseArray([1, 2, 3, 4, 5]));
+
+// Write a function that returns the reverse of a given string.
+
+// Input: “abcde”
+// Output: “edcba”
+
+function reverseString(string) {
+  var reverse = "";
+  for (let i = string.length - 1; i >= 0; i--) {
+    reverse += string[i];
   }
-  return output;
+  return reverse;
 }
 
-console.log(reverseArray([1, 2, 3, 4, 5]));
+console.log(reverseString("percy"));
