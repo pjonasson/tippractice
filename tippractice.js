@@ -163,12 +163,26 @@
 // Input: “abcde”
 // Output: “edcba”
 
-function reverseString(string) {
-  var reverse = "";
-  for (let i = string.length - 1; i >= 0; i--) {
-    reverse += string[i];
-  }
-  return reverse;
+// function reverseString(string) {
+//   var reverse = "";
+//   for (let i = string.length - 1; i >= 0; i--) {
+//     reverse += string[i];
+//   }
+//   return reverse;
+// }
+
+// console.log(reverseString("percy"));
+
+// Given a string, write a function that returns true if the “$” character is contained within the string or false if it is not.
+
+// Input: “i hate $ but i love money i know i know im crazy”
+// Output: true
+
+// Input: “abcdefghijklmnopqrstuvwxyz”
+// Output: false
+
+function containMoneySymbol(string) {
+  return string.includes("$");
 }
 
-console.log(reverseString("percy"));
+console.log(containMoneySymbol("i hate but i love money i know i know im crazy"));
