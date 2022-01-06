@@ -297,20 +297,33 @@
 // Input: “popcorn is so cool isn’t it yeah i thought so”
 // Output: “so thought i yeah it isn’t cool so is popcorn”
 
-function reverseSentence(string) {
-  var reverse = "";
-  var word = "";
-  for (let i = string.length - 1; i >= 0; i--) {
-    if (string[i] === " ") {
-      reverse += word + " ";
-      word = "";
-    } else if (i === 0) {
-      word = string[i].concat(word);
-      reverse += word;
-    } else {
-      word = string[i].concat(word);
+// function reverseSentence(string) {
+//   var reverse = "";
+//   var word = "";
+//   for (let i = string.length - 1; i >= 0; i--) {
+//     if (string[i] === " ") {
+//       reverse += word + " ";
+//       word = "";
+//     } else if (i === 0) {
+//       word = string[i].concat(word);
+//       reverse += word;
+//     } else {
+//       word = string[i].concat(word);
+//     }
+//   }
+//   return reverse;
+// }
+// console.log(reverseSentence("popcorn is so cool isn’t it yeah i thought so"));
+
+// Write a function that returns whether a given number is a prime number.
+
+function prime(number) {
+  for (let i = 2; i < number; i++) {
+    if (number % i === 0) {
+      return false;
     }
   }
-  return reverse;
+  return true;
 }
-console.log(reverseSentence("popcorn is so cool isn’t it yeah i thought so"));
+
+console.log(prime(10));
