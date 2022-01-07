@@ -317,13 +317,33 @@
 
 // Write a function that returns whether a given number is a prime number.
 
-function prime(number) {
-  for (let i = 2; i < number; i++) {
-    if (number % i === 0) {
-      return false;
+// function prime(number) {
+//   for (let i = 2; i < number; i++) {
+//     if (number % i === 0) {
+//       return false;
+//     }
+//   }
+//   return true;
+// }
+
+// console.log(prime(10));
+
+// Write a function that prints out every number from 1 to N, with the following exceptions:
+
+// If the number is divisible by 3, print out "FIZZ".
+// If the number is divisible by 5, print out "BUZZ".
+// If the number is divisible by both 3 and 5, print out "FIZZBUZZ".
+
+function fizzbuzz(n) {
+  for (let i = 1; i <= n; i++) {
+    if (i % 5 === 0 && i % 3 === 0) {
+      console.log("FIZZBUZZ");
+    } else if (i % 5 === 0) {
+      console.log("BUZZ");
+    } else if (i % 3 === 0) {
+      console.log("FIZZ");
     }
   }
-  return true;
 }
 
-console.log(prime(10));
+console.log(fizzbuzz(100));
