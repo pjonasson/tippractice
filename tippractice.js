@@ -334,16 +334,33 @@
 // If the number is divisible by 5, print out "BUZZ".
 // If the number is divisible by both 3 and 5, print out "FIZZBUZZ".
 
-function fizzbuzz(n) {
-  for (let i = 1; i <= n; i++) {
-    if (i % 5 === 0 && i % 3 === 0) {
-      console.log("FIZZBUZZ");
-    } else if (i % 5 === 0) {
-      console.log("BUZZ");
-    } else if (i % 3 === 0) {
-      console.log("FIZZ");
+// function fizzbuzz(n) {
+//   for (let i = 1; i <= n; i++) {
+//     if (i % 5 === 0 && i % 3 === 0) {
+//       console.log("FIZZBUZZ");
+//     } else if (i % 5 === 0) {
+//       console.log("BUZZ");
+//     } else if (i % 3 === 0) {
+//       console.log("FIZZ");
+//     }
+//   }
+// }
+
+// console.log(fizzbuzz(100));
+
+// Given two arrays of strings, return a new string that contains every combination of a string from the first array concatenated with a string from the second array.
+
+// Input: ["a", "b", "c"], ["d", "e", "f", "g"]
+// Output: ["ad", "ae", "af", "ag", "bd", "be", "bf", "bg", "cd", "ce", "cf", "cg"]
+
+function stringCombo(input1, input2) {
+  var output = [];
+  for (let i = 0; i < input1.length; i++) {
+    for (let k = 0; k < input2.length; k++) {
+      output.push(input1[i] + input2[k]);
     }
   }
+  return output;
 }
 
-console.log(fizzbuzz(100));
+console.log(stringCombo(["a", "b", "c"], ["d", "e", "f", "g"]));
