@@ -353,14 +353,32 @@
 // Input: ["a", "b", "c"], ["d", "e", "f", "g"]
 // Output: ["ad", "ae", "af", "ag", "bd", "be", "bf", "bg", "cd", "ce", "cf", "cg"]
 
-function stringCombo(input1, input2) {
+// function stringCombo(input1, input2) {
+//   var output = [];
+//   for (let i = 0; i < input1.length; i++) {
+//     for (let k = 0; k < input2.length; k++) {
+//       output.push(input1[i] + input2[k]);
+//     }
+//   }
+//   return output;
+// }
+
+// console.log(stringCombo(["a", "b", "c"], ["d", "e", "f", "g"]));
+
+// Given ONE array of strings, return a new array that contains every combination of each string with every other string in the array.
+
+// Input: ["a", "b", "c", "d"]
+// Output: ["ab", "ac", "ad", "ba", "bc", "bd", "ca", "cb", "cd", "da", "db", "dc"]
+
+function stringCombo2(input) {
   var output = [];
-  for (let i = 0; i < input1.length; i++) {
-    for (let k = 0; k < input2.length; k++) {
-      output.push(input1[i] + input2[k]);
+  for (let i = 0; i < input.length; i++) {
+    for (let k = input.length - 1; k >= 0; k--) {
+      if (i !== k) {
+        output.push(input[i] + input[k]);
+      }
     }
   }
   return output;
 }
-
-console.log(stringCombo(["a", "b", "c"], ["d", "e", "f", "g"]));
+console.log(stringCombo2(["a", "b", "c", "d"]));
