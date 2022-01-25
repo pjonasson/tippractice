@@ -421,21 +421,37 @@
 // {title: 'Me Eating Pizza', submitted_by: "Joelle P.", likes: 1549},
 // {title: 'best selfie evar!!!', submitted_by: "Patti Q.", likes: 1092},]
 
-function popularPosts(x) {
-  var output = [];
-  for (let i = 0; i < x.length; i++) {
-    if (x[i].likes >= 1000) {
-      output.push(x[i]);
-    }
+// function popularPosts(x) {
+//   var output = [];
+//   for (let i = 0; i < x.length; i++) {
+//     if (x[i].likes >= 1000) {
+//       output.push(x[i]);
+//     }
+//   }
+//   return output;
+// }
+
+// console.log(
+//   popularPosts([
+//     { title: "Me Eating Pizza", submitted_by: "Joelle P.", likes: 1549 },
+//     { title: "i never knew how cool i was until now", submitted_by: "Lyndon Johnson", likes: 3 },
+//     { title: "best selfie evar!!!", submitted_by: "Patti Q.", likes: 1092 },
+//     { title: "Mondays are the worst", submitted_by: "Aunty Em", likes: 644 },
+//   ])
+// );
+
+// Given a hash, create a new hash that has the keys and values switched.
+
+// Input: {"a" => 1, "b" => 2, "c" => 3}
+// Output: {1 => "a", 2 => "b", 3 => "c"}
+
+function flipHash(hash) {
+  var output = {};
+  const e = Object.entries(hash);
+  for (let i = 0; i < e.length; i++) {
+    output[e[i][1]] = e[i][0];
   }
   return output;
 }
 
-console.log(
-  popularPosts([
-    { title: "Me Eating Pizza", submitted_by: "Joelle P.", likes: 1549 },
-    { title: "i never knew how cool i was until now", submitted_by: "Lyndon Johnson", likes: 3 },
-    { title: "best selfie evar!!!", submitted_by: "Patti Q.", likes: 1092 },
-    { title: "Mondays are the worst", submitted_by: "Aunty Em", likes: 644 },
-  ])
-);
+console.log(flipHash({ a: 1, b: 2, c: 3 }));
