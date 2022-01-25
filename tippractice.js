@@ -370,15 +370,40 @@
 // Input: ["a", "b", "c", "d"]
 // Output: ["ab", "ac", "ad", "ba", "bc", "bd", "ca", "cb", "cd", "da", "db", "dc"]
 
-function stringCombo2(input) {
-  var output = [];
-  for (let i = 0; i < input.length; i++) {
-    for (let k = input.length - 1; k >= 0; k--) {
-      if (i !== k) {
-        output.push(input[i] + input[k]);
-      }
+// function stringCombo2(input) {
+//   var output = [];
+//   for (let i = 0; i < input.length; i++) {
+//     for (let k = input.length - 1; k >= 0; k--) {
+//       if (i !== k) {
+//         output.push(input[i] + input[k]);
+//       }
+//     }
+//   }
+//   return output;
+// }
+// console.log(stringCombo2(["a", "b", "c", "d"]));
+
+// Given two arrays, determine whether one is a subset of the other. It is considered a subset if all the values in one array are contained within the other.
+
+// NOTE: You must accomplish this in O(n) time. This is also known as linear time.
+
+// Input: [1, 2, 3, 4, 5, 6], [6, 3, 2]
+// Output: true
+
+// Input: [1, 2, 3, 4, 5, 6], [6, 3, 7]
+// Output: false
+
+function subset(array1, array2) {
+  var check = {};
+  for (let i = 0; i < array1.length; i++) {
+    check[array1[i]] = true;
+  }
+  for (let k = 0; k < array2.length; k++) {
+    if (check[array2[k]] !== true) {
+      return false;
     }
   }
-  return output;
+  return true;
 }
-console.log(stringCombo2(["a", "b", "c", "d"]));
+
+console.log(subset([1, 2, 3, 4, 5, 6, 7], [7, 3, 2]));
