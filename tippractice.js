@@ -445,13 +445,49 @@
 // Input: {"a" => 1, "b" => 2, "c" => 3}
 // Output: {1 => "a", 2 => "b", 3 => "c"}
 
-function flipHash(hash) {
-  var output = {};
-  const e = Object.entries(hash);
-  for (let i = 0; i < e.length; i++) {
-    output[e[i][1]] = e[i][0];
+// function flipHash(hash) {
+//   var output = {};
+//   const e = Object.entries(hash);
+//   for (let i = 0; i < e.length; i++) {
+//     output[e[i][1]] = e[i][0];
+//   }
+//   return output;
+// }
+
+// console.log(flipHash({ a: 1, b: 2, c: 3 }));
+
+// Given a string, find the first non-repeating character in it and return its index. If it doesn't exist, return -1.
+
+// NOTE: You must accomplish this in O(n) time. This is also known as linear time.
+
+// Examples:
+
+// s = "leetcode"
+// return 0.
+// (The "l" is the first character that only appears once in the string, and appears at index 0.)
+
+// s = "loveleetcode",
+// return 2.
+// (The "l" and "o" are repeated, so the first non-repeating character is the "v", which is at index 2.)
+
+// Note: You may assume the string contain only lowercase letters.
+
+function uniqueCharacter(string) {
+  var count = {};
+  for (let i = 0; i < string.length; i++) {
+    if (count[string[i]]) {
+      count[string[i]] += 1;
+    } else {
+      count[string[i]] = 1;
+    }
   }
-  return output;
+  for (const [key, value] of Object.entries(count)) {
+    if (value === 1) {
+      var firstUnique = key;
+      break;
+    }
+  }
+  return string.indexOf(firstUnique);
 }
 
-console.log(flipHash({ a: 1, b: 2, c: 3 }));
+console.log(uniqueCharacter("loveleetcode"));
