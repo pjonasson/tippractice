@@ -663,73 +663,96 @@ string = "leetcode"
 
 # p two_sum([2, 5, 3, 1, 0, 7, 11])
 
-addresses = [
-  {
-    "account_id": "39",
-    "street_address": "216 N May St",
-    "city": "Chicago",
-    "state": "IL",
-    "postal_code": "60607",
-  },
-  {
-    "account_id": "40",
-    "street_address": "625 W Adams St",
-    "city": "Chicago",
-    "state": "IL",
-    "postal_code": "60661",
-  },
-  {
-    "account_id": "41",
-    "street_address": "151 N Franklin St",
-    "city": "Chicago",
-    "state": "IL",
-    "postal_code": "60606",
-  },
-  {
-    "account_id": "42",
-    "street_address": "216 N May St",
-    "city": "Chicago",
-    "state": "IL",
-    "postal_code": "60607",
-  },
-  {
-    "account_id": "43",
-    "street_address": "151 N Franklin St",
-    "city": "Chicago",
-    "state": "IL",
-    "postal_code": "60606",
-  },
-  {
-    "account_id": "44",
-    "street_address": "216 N May St",
-    "city": "Chicago",
-    "state": "IL",
-    "postal_code": "60607",
-  },
-]
+# addresses = [
+#   {
+#     "account_id": "39",
+#     "street_address": "216 N May St",
+#     "city": "Chicago",
+#     "state": "IL",
+#     "postal_code": "60607",
+#   },
+#   {
+#     "account_id": "40",
+#     "street_address": "625 W Adams St",
+#     "city": "Chicago",
+#     "state": "IL",
+#     "postal_code": "60661",
+#   },
+#   {
+#     "account_id": "41",
+#     "street_address": "151 N Franklin St",
+#     "city": "Chicago",
+#     "state": "IL",
+#     "postal_code": "60606",
+#   },
+#   {
+#     "account_id": "42",
+#     "street_address": "216 N May St",
+#     "city": "Chicago",
+#     "state": "IL",
+#     "postal_code": "60607",
+#   },
+#   {
+#     "account_id": "43",
+#     "street_address": "151 N Franklin St",
+#     "city": "Chicago",
+#     "state": "IL",
+#     "postal_code": "60606",
+#   },
+#   {
+#     "account_id": "44",
+#     "street_address": "216 N May St",
+#     "city": "Chicago",
+#     "state": "IL",
+#     "postal_code": "60607",
+#   },
+# ]
 
-def find_related_addresses(addresses)
-  related = {}
-  addresses.each do |address|
-    if related[address[:street_address]]
-      related[address[:street_address]] += 1
-    else related[address[:street_address]] = 1     end
-  end
-  answer = {}
-  index = 0
-  while index < related.length
-    if related.values[index] > 1
-      answer[related.keys[index]] = []
-      addresses.each do |address|
-        if related.keys[index] == address[:street_address]
-          answer[related.keys[index]] << address[:account_id]
-        end
-      end
+# def find_related_addresses(addresses)
+#   related = {}
+#   addresses.each do |address|
+#     if related[address[:street_address]]
+#       related[address[:street_address]] += 1
+#     else related[address[:street_address]] = 1     end
+#   end
+#   answer = {}
+#   index = 0
+#   while index < related.length
+#     if related.values[index] > 1
+#       answer[related.keys[index]] = []
+#       addresses.each do |address|
+#         if related.keys[index] == address[:street_address]
+#           answer[related.keys[index]] << address[:account_id]
+#         end
+#       end
+#     end
+#     index += 1
+#   end
+
+#   return answer
+# end
+
+# p find_related_addresses(addresses)
+
+# Given two arrays, determine whether one is a subset of the other. It is considered a subset if all the values in one array are contained within the other.
+
+# NOTE: You must accomplish this in O(n) time. This is also known as linear time.
+
+# Input: [1, 2, 3, 4, 5, 6], [6, 3, 2]
+# Output: true
+
+# Input: [1, 2, 3, 4, 5, 6], [6, 3, 7]
+# Output: false
+
+def subset(array1, array2)
+  hash = {}
+  array1.each { |n| hash[n] = true }
+  array2.each do |n|
+    if hash[n] != true
+      return false
     end
-    index += 1
   end
-
-  return answer
+  return true
 end
 
-p find_related_addresses(addresses)
+p subset([1, 2, 3, 4, 5, 6], [1, 6, 3, 20])
