@@ -393,17 +393,49 @@
 // Input: [1, 2, 3, 4, 5, 6], [6, 3, 7]
 // Output: false
 
-function subset(array1, array2) {
-  var check = {};
-  for (let i = 0; i < array1.length; i++) {
-    check[array1[i]] = true;
-  }
-  for (let k = 0; k < array2.length; k++) {
-    if (check[array2[k]] !== true) {
-      return false;
+// function subset(array1, array2) {
+//   var check = {};
+//   for (let i = 0; i < array1.length; i++) {
+//     check[array1[i]] = true;
+//   }
+//   for (let k = 0; k < array2.length; k++) {
+//     if (check[array2[k]] !== true) {
+//       return false;
+//     }
+//   }
+//   return true;
+// }
+
+// console.log(subset([1, 2, 3, 4, 5, 6, 7], [7, 3, 2]));
+
+// Given an array of hashes that represent a list of social media posts, return a new array that only contains the posts that have at least 1000 likes.
+
+// Input: [
+// {title: 'Me Eating Pizza', submitted_by: "Joelle P.", likes: 1549},
+// {title: 'i never knew how cool i was until now', submitted_by: "Lyndon Johnson", likes: 3},
+// {title: 'best selfie evar!!!', submitted_by: "Patti Q.", likes: 1092},
+// {title: 'Mondays are the worst', submitted_by: "Aunty Em", likes: 644}
+// ]
+
+// Output: [
+// {title: 'Me Eating Pizza', submitted_by: "Joelle P.", likes: 1549},
+// {title: 'best selfie evar!!!', submitted_by: "Patti Q.", likes: 1092},]
+
+function popularPosts(x) {
+  var output = [];
+  for (let i = 0; i < x.length; i++) {
+    if (x[i].likes >= 1000) {
+      output.push(x[i]);
     }
   }
-  return true;
+  return output;
 }
 
-console.log(subset([1, 2, 3, 4, 5, 6, 7], [7, 3, 2]));
+console.log(
+  popularPosts([
+    { title: "Me Eating Pizza", submitted_by: "Joelle P.", likes: 1549 },
+    { title: "i never knew how cool i was until now", submitted_by: "Lyndon Johnson", likes: 3 },
+    { title: "best selfie evar!!!", submitted_by: "Patti Q.", likes: 1092 },
+    { title: "Mondays are the worst", submitted_by: "Aunty Em", likes: 644 },
+  ])
+);

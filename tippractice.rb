@@ -744,15 +744,15 @@ string = "leetcode"
 # Input: [1, 2, 3, 4, 5, 6], [6, 3, 7]
 # Output: false
 
-def subset(array1, array2)
-  hash = {}
-  array1.each { |n| hash[n] = true }
-  array2.each do |n|
-    if hash[n] != true
-      return false
-    end
-  end
-  return true
-end
+# def subset(array1, array2)
+#   hash = {}
+#   array1.each { |n| hash[n] = true }
+#   array2.each do |n|
+#     if hash[n] != true
+#       return false
+#     end
+#   end
+#   return true
+# end
 
-p subset([1, 2, 3, 4, 5, 6], [1, 6, 3, 20])
+# p subset([1, 2, 3, 4, 5, 6], [1, 6, 3, 20])
