@@ -787,3 +787,18 @@ string = "leetcode"
 #     { title: "best selfie evar!!!", submitted_by: "Patti Q.", likes: 1092 },
 #     { title: "Mondays are the worst", submitted_by: "Aunty Em", likes: 644 },
 #   ])
+
+# Given a hash, create a new hash that has the keys and values switched.
+
+# Input: {"a" => 1, "b" => 2, "c" => 3}
+# Output: {1 => "a", 2 => "b", 3 => "c"}
+
+def flip(hash)
+  output = {}
+  hash.each do |key, value|
+    output[value] = key
+  end
+  return output
+end
+
+p flip({ "a" => 1, "b" => 2, "c" => 3 })
