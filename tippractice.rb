@@ -819,14 +819,30 @@ string = "leetcode"
 
 # Note: You may assume the string contain only lowercase letters.
 
-def unique_character(string)
-  count = string.chars.tally
-  count.each do |key, value|
-    if value == 1
-      return string.index(key)
-    end
+# def unique_character(string)
+#   count = string.chars.tally
+#   count.each do |key, value|
+#     if value == 1
+#       return string.index(key)
+#     end
+#   end
+#   return -1
+# end
+
+# p unique_character("loeleeoe")
+
+# Given a hash, return a flat array containing all the hash’s keys and values.
+
+# Input: {“a” => 1, “b” => 2, “c” => 3, “d” => 4}
+# Output: [“a”, 1, “b”, 2, “c”, 3, “d”, 4]
+
+def flatten(hash)
+  output = []
+  hash.each do |key, value|
+    output << key
+    output << value
   end
-  return -1
+  return output
 end
 
-p unique_character("loeleeoe")
+p flatten({ "a" => 1, "b" => 2, "c" => 3, "d" => 4 })
