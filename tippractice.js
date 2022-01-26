@@ -472,22 +472,39 @@
 
 // Note: You may assume the string contain only lowercase letters.
 
-function uniqueCharacter(string) {
-  var count = {};
-  for (let i = 0; i < string.length; i++) {
-    if (count[string[i]]) {
-      count[string[i]] += 1;
-    } else {
-      count[string[i]] = 1;
-    }
-  }
-  for (const [key, value] of Object.entries(count)) {
-    if (value === 1) {
-      var firstUnique = key;
-      break;
-    }
-  }
-  return string.indexOf(firstUnique);
+// function uniqueCharacter(string) {
+//   var count = {};
+//   for (let i = 0; i < string.length; i++) {
+//     if (count[string[i]]) {
+//       count[string[i]] += 1;
+//     } else {
+//       count[string[i]] = 1;
+//     }
+//   }
+//   for (const [key, value] of Object.entries(count)) {
+//     if (value === 1) {
+//       var firstUnique = key;
+//       break;
+//     }
+//   }
+//   return string.indexOf(firstUnique);
+// }
+
+// console.log(uniqueCharacter("loveleetcode"));
+
+// Given a hash, return a flat array containing all the hash’s keys and values.
+
+// Input: {“a” => 1, “b” => 2, “c” => 3, “d” => 4}
+// Output: [“a”, 1, “b”, 2, “c”, 3, “d”, 4]
+
+function flatten(hash) {
+  var output = [];
+  Object.entries(hash).forEach((pair) => {
+    pair.forEach((group) => {
+      output.push(group);
+    });
+  });
+  return output;
 }
 
-console.log(uniqueCharacter("loveleetcode"));
+console.log(flatten({ a: 1, b: 2, c: 3, d: 4 }));
