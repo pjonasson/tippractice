@@ -926,76 +926,130 @@ string = "leetcode"
 # Start with an array of numbers and create a new array with each number times 3.
 #     For example, [1, 2, 3] becomes [3, 6, 9].
 
+# def multiple_of_three(array)
+#   output = []
+#   array.each { |n| output << n + 3 }
+#   return output
+# end
+
+# p multiple_of_three([1, 2, 3])
+
+# # Start with an array of strings and create a new array with each string upcased.
+# #     For example, ["hello", "goodbye"] becomes ["HELLO", "GOODBYE"].
+
+# def upcase(array)
+#   output = []
+#   array.each { |word| output << word.upcase }
+#   return output
+# end
+
+# p upcase(["hello", "goodbye"])
+
+# # # Start with an array of hashes and create a new array of string values from each hash's :name key.
+# # #      For example, [{name: "Alice", age: 27}, {name: "Blane", age: 16}] becomes ["Alice", "Blane"].
+
+# def names(array)
+#   output = []
+#   array.each { |person| output << person[:name] }
+#   return output
+# end
+
+# p names([{ name: "Alice", age: 27 }, { name: "Blane", age: 16 }])
+
+# # # Start with an array of numbers and create a new array with each number plus 7.
+# # #     For example, [1, 2, 3] becomes [8, 9, 10].
+
+# def increase_of_seven(array)
+#   output = []
+#   array.each { |n| output << n + 7 }
+#   return output
+# end
+
+# p increase_of_seven([1, 2, 3])
+
+# # # Start with an array of strings and create a new array with each string's length.
+# # #      For example, ["hello", "goodbye"] becomes [5, 7].
+
+# def string_length(array)
+#   output = []
+#   array.each { |word| output << word.length }
+#   return output
+# end
+
+# p string_length(["hello", "goodbye"])
+
+# # # Start with an array of hashes and create a new array of number values from each hash's :age key.
+# # # #     For example, [{name: "Alice", age: 27}, {name: "Blane", age: 16}] becomes [27, 16].
+
+# def peoples_age(array)
+#   all_ages = []
+#   array.each { |person| all_ages << person[:age] }
+#   return all_ages
+# end
+
+# p peoples_age([{ name: "Alice", age: 27 }, { name: "Blane", age: 16 }])
+
+# # # Start with an array of strings and create a new array with each string's first letter only.
+# # # #     For example, ["hello", "goodbye"] becomes ["h", "g"].
+
+# def first_letter(array)
+#   letters = []
+#   array.each { |word| letters << word[0] }
+#   return letters
+# end
+
+# p first_letter(["hello", "goodbye"])
+
+# Start with an array of numbers and create a new array with each number times 3.
+# #     For example, [1, 2, 3] becomes [3, 6, 9].
+
 def multiple_of_three(array)
-  output = []
-  array.each { |n| output << n + 3 }
-  return output
+  array.map { |n| n * 3 }
 end
 
-p multiple_of_three([1, 2, 3])
+p multiple_of_three([1, 3, 6])
 
-# Start with an array of strings and create a new array with each string upcased.
+# \Start with an array of strings and create a new array with each string upcased.
 #     For example, ["hello", "goodbye"] becomes ["HELLO", "GOODBYE"].
 
 def upcase(array)
-  output = []
-  array.each { |word| output << word.upcase }
-  return output
+  array.map { |word| word.upcase }
 end
 
 p upcase(["hello", "goodbye"])
 
-# # Start with an array of hashes and create a new array of string values from each hash's :name key.
-# #      For example, [{name: "Alice", age: 27}, {name: "Blane", age: 16}] becomes ["Alice", "Blane"].
+# Start with an array of hashes and create a new array of string values from each hash's :name key.
+# #     For example, [{name: "Alice", age: 27}, {name: "Blane", age: 16}] becomes ["Alice", "Blane"].
 
 def names(array)
-  output = []
-  array.each { |person| output << person[:name] }
-  return output
+  array.map { |person| person[:name] }
 end
 
 p names([{ name: "Alice", age: 27 }, { name: "Blane", age: 16 }])
 
-# # Start with an array of numbers and create a new array with each number plus 7.
-# #     For example, [1, 2, 3] becomes [8, 9, 10].
+# Start with an array of numbers and create a new array with each number plus 7.
+#     For example, [1, 2, 3] becomes [8, 9, 10].
 
-def increase_of_seven(array)
-  output = []
-  array.each { |n| output << n + 7 }
-  return output
+def increase_by_seven(array)
+  array.map { |n| n + 7 }
 end
 
-p increase_of_seven([1, 2, 3])
+p increase_by_seven([1, 2, 3])
 
-# # Start with an array of strings and create a new array with each string's length.
-# #      For example, ["hello", "goodbye"] becomes [5, 7].
+# Start with an array of strings and create a new array with each string's length.
+# #     For example, ["hello", "goodbye"] becomes [5, 7].
 
 def string_length(array)
-  output = []
-  array.each { |word| output << word.length }
-  return output
+  array.map { |word| word.length }
 end
 
 p string_length(["hello", "goodbye"])
 
-# # Start with an array of hashes and create a new array of number values from each hash's :age key.
-# # #     For example, [{name: "Alice", age: 27}, {name: "Blane", age: 16}] becomes [27, 16].
+# Start with an array of hashes and create a new array of number values from each hash's :age key.
+# #     For example, [{name: "Alice", age: 27}, {name: "Blane", age: 16}] becomes [27, 16].
 
-def peoples_age(array)
-  all_ages = []
-  array.each { |person| all_ages << person[:age] }
-  return all_ages
+def ages(array)
+  array.map { |person| person[:age] }
 end
 
-p peoples_age([{ name: "Alice", age: 27 }, { name: "Blane", age: 16 }])
-
-# # Start with an array of strings and create a new array with each string's first letter only.
-# # #     For example, ["hello", "goodbye"] becomes ["h", "g"].
-
-def first_letter(array)
-  letters = []
-  array.each { |word| letters << word[0] }
-  return letters
-end
-
-p first_letter(["hello", "goodbye"])
+p ages([{ name: "Alice", age: 27 }, { name: "Blane", age: 16 }])
