@@ -849,76 +849,153 @@ string = "leetcode"
 
 # Make a hash to store a person's first name, last name, and email address. Then print each attribute on separate lines.
 
-person = { first_name: "Percy", last_name: "Jonasson", email: "pjonasson@outlook.com" }
-p person[:first_name]
-p person[:last_name]
-p person[:email]
+# person = { first_name: "Percy", last_name: "Jonasson", email: "pjonasson@outlook.com" }
+# p person[:first_name]
+# p person[:last_name]
+# p person[:email]
 
-# Make an array of hashes to store the first name and last name for 3 different people. Then print out the first person's info.
+# # Make an array of hashes to store the first name and last name for 3 different people. Then print out the first person's info.
 
-people = [{ first_name: "Percy", last_name: "Jonasson" }, { first_name: "Tiffany", last_name: "Jonasson" }, { first_name: "DuJuan", last_name: "Prater" }]
+# people = [{ first_name: "Percy", last_name: "Jonasson" }, { first_name: "Tiffany", last_name: "Jonasson" }, { first_name: "DuJuan", last_name: "Prater" }]
 
-p people[0]
+# p people[0]
 
-p people[0][:first_name]
-p people[1][:first_name]
-p people[2][:first_name]
+# p people[0][:first_name]
+# p people[1][:first_name]
+# p people[2][:first_name]
 
-def first_name(list)
-  list.each do |person|
-    p person[:first_name]
-  end
-end
+# def first_name(list)
+#   list.each do |person|
+#     p person[:first_name]
+#   end
+# end
 
-first_name(people)
+# first_name(people)
 
-# Make a hash to store prices for 3 different menu items. Then add a new menu item and price and print the hash to see the result.
+# # Make a hash to store prices for 3 different menu items. Then add a new menu item and price and print the hash to see the result.
 
-menu = { apple: "$1", burger: "$5", chicken: "$4" }
-menu[:whiskey] = "$30"
-p menu
+# menu = { apple: "$1", burger: "$5", chicken: "$4" }
+# menu[:whiskey] = "$30"
+# p menu
 
-# Make a hash to store a book's title, author, number of pages, and language. Then print each attribute on separate lines.
+# # Make a hash to store a book's title, author, number of pages, and language. Then print each attribute on separate lines.
 
-book = { title: "How to Code", author: "Percy Jonasson", number_of_pages: 100, language: "Ruby" }
-p book[:title]
-p book[:author]
-p book[:number_of_pages]
-p book[:language]
-p book.values
+# book = { title: "How to Code", author: "Percy Jonasson", number_of_pages: 100, language: "Ruby" }
+# p book[:title]
+# p book[:author]
+# p book[:number_of_pages]
+# p book[:language]
+# p book.values
 
-def book_info(info)
-  info.each do |_key, value|
-    p value
-  end
-end
+# def book_info(info)
+#   info.each do |_key, value|
+#     p value
+#   end
+# end
 
-book_info(book)
+# book_info(book)
 
-# Make an array of hashes to store the title and author for 3 different books. Then print out the third book's author.
+# # Make an array of hashes to store the title and author for 3 different books. Then print out the third book's author.
 
-books = [{ title: "Green Eggs and Ham", author: "Dr. Suess" }, { title: "Harry Potter and the Chamer of Secrets", author: "J.K. Rowling" }, { title: "Cant Hurt Me", author: "David Goggins" }]
-p books[2][:author]
+# books = [{ title: "Green Eggs and Ham", author: "Dr. Suess" }, { title: "Harry Potter and the Chamer of Secrets", author: "J.K. Rowling" }, { title: "Cant Hurt Me", author: "David Goggins" }]
+# p books[2][:author]
 
-# Make a hash to store 3 different states and their captitals. Then add a new state and capital and print the hash to see the result.
+# # Make a hash to store 3 different states and their captitals. Then add a new state and capital and print the hash to see the result.
 
-combo = { Texas: "Austin", Illinois: "Springfield", Colorado: "Denver" }
-combo[:Alaska] = "Juneau"
-p combo
+# combo = { Texas: "Austin", Illinois: "Springfield", Colorado: "Denver" }
+# combo[:Alaska] = "Juneau"
+# p combo
 
 # Make a hash to store a laptop's brand, model, and year. Then print each attribute on separate lines.
 
-laptop1 = { brand: "Mac", model: "Mac Book Pro", year: "2021" }
+# laptop1 = { brand: "Mac", model: "Mac Book Pro", year: "2021" }
 
-def laptop_attributes(laptop)
-  laptop.each do |attribute|
-    p attribute
-  end
+# def laptop_attributes(laptop)
+#   laptop.each do |attribute|
+#     p attribute
+#   end
+# end
+
+# laptop_attributes(laptop1)
+
+# # Make an array of hashes to store the brand and model for 3 different laptops. Then print out the second laptop's model.
+
+# laptops = [{ brand: "Mac", model: "Mac Book Pro1" }, { brand: "Mac", model: "Mac Book Pro2" }, { brand: "Mac", model: "Mac Book Pro3" }]
+# p laptops[1][:model]
+
+# Start with an array of numbers and create a new array with each number times 3.
+#     For example, [1, 2, 3] becomes [3, 6, 9].
+
+def multiple_of_three(array)
+  output = []
+  array.each { |n| output << n + 3 }
+  return output
 end
 
-laptop_attributes(laptop1)
+p multiple_of_three([1, 2, 3])
 
-# Make an array of hashes to store the brand and model for 3 different laptops. Then print out the second laptop's model.
+# Start with an array of strings and create a new array with each string upcased.
+#     For example, ["hello", "goodbye"] becomes ["HELLO", "GOODBYE"].
 
-laptops = [{ brand: "Mac", model: "Mac Book Pro1" }, { brand: "Mac", model: "Mac Book Pro2" }, { brand: "Mac", model: "Mac Book Pro3" }]
-p laptops[1][:model]
+def upcase(array)
+  output = []
+  array.each { |word| output << word.upcase }
+  return output
+end
+
+p upcase(["hello", "goodbye"])
+
+# # Start with an array of hashes and create a new array of string values from each hash's :name key.
+# #      For example, [{name: "Alice", age: 27}, {name: "Blane", age: 16}] becomes ["Alice", "Blane"].
+
+def names(array)
+  output = []
+  array.each { |person| output << person[:name] }
+  return output
+end
+
+p names([{ name: "Alice", age: 27 }, { name: "Blane", age: 16 }])
+
+# # Start with an array of numbers and create a new array with each number plus 7.
+# #     For example, [1, 2, 3] becomes [8, 9, 10].
+
+def increase_of_seven(array)
+  output = []
+  array.each { |n| output << n + 7 }
+  return output
+end
+
+p increase_of_seven([1, 2, 3])
+
+# # Start with an array of strings and create a new array with each string's length.
+# #      For example, ["hello", "goodbye"] becomes [5, 7].
+
+def string_length(array)
+  output = []
+  array.each { |word| output << word.length }
+  return output
+end
+
+p string_length(["hello", "goodbye"])
+
+# # Start with an array of hashes and create a new array of number values from each hash's :age key.
+# # #     For example, [{name: "Alice", age: 27}, {name: "Blane", age: 16}] becomes [27, 16].
+
+def peoples_age(array)
+  all_ages = []
+  array.each { |person| all_ages << person[:age] }
+  return all_ages
+end
+
+p peoples_age([{ name: "Alice", age: 27 }, { name: "Blane", age: 16 }])
+
+# # Start with an array of strings and create a new array with each string's first letter only.
+# # #     For example, ["hello", "goodbye"] becomes ["h", "g"].
+
+def first_letter(array)
+  letters = []
+  array.each { |word| letters << word[0] }
+  return letters
+end
+
+p first_letter(["hello", "goodbye"])
