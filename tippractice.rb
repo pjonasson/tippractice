@@ -836,13 +836,89 @@ string = "leetcode"
 # Input: {“a” => 1, “b” => 2, “c” => 3, “d” => 4}
 # Output: [“a”, 1, “b”, 2, “c”, 3, “d”, 4]
 
-def flatten(hash)
-  output = []
-  hash.each do |key, value|
-    output << key
-    output << value
+# def flatten(hash)
+#   output = []
+#   hash.each do |key, value|
+#     output << key
+#     output << value
+#   end
+#   return output
+# end
+
+# p flatten({ "a" => 1, "b" => 2, "c" => 3, "d" => 4 })
+
+# Make a hash to store a person's first name, last name, and email address. Then print each attribute on separate lines.
+
+person = { first_name: "Percy", last_name: "Jonasson", email: "pjonasson@outlook.com" }
+p person[:first_name]
+p person[:last_name]
+p person[:email]
+
+# Make an array of hashes to store the first name and last name for 3 different people. Then print out the first person's info.
+
+people = [{ first_name: "Percy", last_name: "Jonasson" }, { first_name: "Tiffany", last_name: "Jonasson" }, { first_name: "DuJuan", last_name: "Prater" }]
+
+p people[0]
+
+p people[0][:first_name]
+p people[1][:first_name]
+p people[2][:first_name]
+
+def first_name(list)
+  list.each do |person|
+    p person[:first_name]
   end
-  return output
 end
 
-p flatten({ "a" => 1, "b" => 2, "c" => 3, "d" => 4 })
+first_name(people)
+
+# Make a hash to store prices for 3 different menu items. Then add a new menu item and price and print the hash to see the result.
+
+menu = { apple: "$1", burger: "$5", chicken: "$4" }
+menu[:whiskey] = "$30"
+p menu
+
+# Make a hash to store a book's title, author, number of pages, and language. Then print each attribute on separate lines.
+
+book = { title: "How to Code", author: "Percy Jonasson", number_of_pages: 100, language: "Ruby" }
+p book[:title]
+p book[:author]
+p book[:number_of_pages]
+p book[:language]
+p book.values
+
+def book_info(info)
+  info.each do |_key, value|
+    p value
+  end
+end
+
+book_info(book)
+
+# Make an array of hashes to store the title and author for 3 different books. Then print out the third book's author.
+
+books = [{ title: "Green Eggs and Ham", author: "Dr. Suess" }, { title: "Harry Potter and the Chamer of Secrets", author: "J.K. Rowling" }, { title: "Cant Hurt Me", author: "David Goggins" }]
+p books[2][:author]
+
+# Make a hash to store 3 different states and their captitals. Then add a new state and capital and print the hash to see the result.
+
+combo = { Texas: "Austin", Illinois: "Springfield", Colorado: "Denver" }
+combo[:Alaska] = "Juneau"
+p combo
+
+# Make a hash to store a laptop's brand, model, and year. Then print each attribute on separate lines.
+
+laptop1 = { brand: "Mac", model: "Mac Book Pro", year: "2021" }
+
+def laptop_attributes(laptop)
+  laptop.each do |attribute|
+    p attribute
+  end
+end
+
+laptop_attributes(laptop1)
+
+# Make an array of hashes to store the brand and model for 3 different laptops. Then print out the second laptop's model.
+
+laptops = [{ brand: "Mac", model: "Mac Book Pro1" }, { brand: "Mac", model: "Mac Book Pro2" }, { brand: "Mac", model: "Mac Book Pro3" }]
+p laptops[1][:model]
