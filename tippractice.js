@@ -497,14 +497,18 @@
 // Input: {“a” => 1, “b” => 2, “c” => 3, “d” => 4}
 // Output: [“a”, 1, “b”, 2, “c”, 3, “d”, 4]
 
-function flatten(hash) {
-  var output = [];
-  Object.entries(hash).forEach((pair) => {
-    pair.forEach((group) => {
-      output.push(group);
-    });
-  });
-  return output;
-}
+// function flatten(hash) {
+//   var output = [];
+//   Object.entries(hash).forEach((pair) => {
+//     pair.forEach((group) => {
+//       output.push(group);
+//     });
+//   });
+//   return output;
+// }
 
-console.log(flatten({ a: 1, b: 2, c: 3, d: 4 }));
+// console.log(flatten({ a: 1, b: 2, c: 3, d: 4 }));
+
+// let numbers = [1, 4, 9];
+// let double = numbers.forEach((n) => console.log(n * 2));
+// console.log(double);
